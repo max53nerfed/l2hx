@@ -1,0 +1,6 @@
+.dark-theme .navigation {
+    /*background: #000;*/
+}
+.dark-theme .header {
+    background: url(../images/bg/bg_dark_snap2.jpg) #f8f7f5 top center no-repeat !important;
+}

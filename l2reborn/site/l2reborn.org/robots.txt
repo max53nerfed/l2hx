@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /profile/
+Disallow: /tags/
+Disallow: /members/
+Disallow: /subscriptions/
+Disallow: /community/profile/
+Disallow: /community/tags/
+Disallow: /community/members/
+Disallow: /community/subscriptions/
+Disallow: /my-support-tickets/
