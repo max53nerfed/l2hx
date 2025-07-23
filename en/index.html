@@ -47,7 +47,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
   </script>
-<!--<a href="https://discord.gg/3BVp9ScQzH" target="_blank" class="popup wow fadeInRight" data-wow-delay="1.5s" id="popupLink">
+<!--<a href="https://discord.gg/" target="_blank" class="popup wow fadeInRight" data-wow-delay="1.5s" id="popupLink">
   <span onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>
     <button class="close">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M0 0l18.4 15L0 30l11.7-15L0 0z"></path><path d="M30 0L11.4 15 30 30 18.2 15 30 0z"></path></svg>
@@ -66,7 +66,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 -->
       <div class="b-social">
          <ul>
-            <li><a href="https://discord.gg/vmf5f5VYZY" target="_blank"><i class="icon-discord"></i></a></li>
+            <li><a href="https://discord.gg/" target="_blank"><i class="icon-discord"></i></a></li>
          </ul>
       </div>
     <header class="animated">
@@ -82,7 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a class="menu" href="https://l2hex.com/en/features">About</a></li>
             <li class="hide-smartphone"><a class="menu" href="https://l2hex.com/en/play">Download</a></li>
             <li><a class="menu" href="https://l2hex.com/en/articles">Articles</a></li>
-            <li class="hide-smartphone"><a class="menu" href="https://discord.gg/vmf5f5VYZY" target="_blank">Discord</a></li>
+            <li class="hide-smartphone"><a class="menu" href="https://discord.gg/" target="_blank">Discord</a></li>
             <!--<li>
               <a class="menu language" href="../ru/index" lang="en" hreflang="ru">
                 <img src="../img/en.png" alt="">
@@ -741,88 +741,6 @@ function getCookie(name) {
   return null;
 }
 
-class SnowEffect {
-  constructor() {
-    this.snowContainer = document.getElementById('snow');
-    this.toggleButton = document.getElementById('snowToggle');
-    //this.snowflakeChars = ['❅', '❆', '❄'];
-    this.snowflakeChars = ['🌸', '🍃'];
-    this.interval = null;
-    this.isEnabled = getCookie('snowEnabled') !== 'false'; // Default to enabled if no cookie
-    
-    this.initialize();
-  }
-
-  initialize() {
-    this.updateButtonText();
-    this.toggleButton.addEventListener('click', () => this.toggle());
-    
-    // Initial state
-    if (this.isEnabled) {
-      this.start();
-    } else {
-      this.stop();
-    }
-  }
-
-  createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.style.left = Math.random() * 100 + '%';
-    snowflake.style.opacity = Math.random() * 0.6 + 0.2;
-    snowflake.style.fontSize = (Math.random() * 20 + 10) + 'px';
-    snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    snowflake.innerHTML = this.snowflakeChars[Math.floor(Math.random() * this.snowflakeChars.length)];
-    
-    this.snowContainer.appendChild(snowflake);
-
-    // Remove snowflake after animation
-    setTimeout(() => {
-      if (snowflake.parentNode === this.snowContainer) {
-        this.snowContainer.removeChild(snowflake);
-      }
-    }, parseFloat(snowflake.style.animationDuration) * 1000);
-  }
-
-  start() {
-    if (!this.interval) {
-      this.interval = setInterval(() => this.createSnowflake(), 200);
-    }
-    this.snowContainer.style.display = 'block';
-  }
-
-  stop() {
-    if (this.interval) {
-      clearInterval(this.interval);
-      this.interval = null;
-    }
-    this.snowContainer.style.display = 'none';
-    this.snowContainer.innerHTML = ''; // Clear existing snowflakes
-  }
-
-  toggle() {
-    this.isEnabled = !this.isEnabled;
-    setCookie('snowEnabled', this.isEnabled, 365); // Store preference for 1 year
-    
-    if (this.isEnabled) {
-      this.start();
-    } else {
-      this.stop();
-    }
-    
-    this.updateButtonText();
-  }
-
-  updateButtonText() {
-    const textSpan = this.toggleButton.querySelector('.text');
-    textSpan.textContent = this.isEnabled ? 'Disable Effects' : 'Enable Effects';
-  }
-}
-
-// Initialize snow effect when document is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  window.snowEffect = new SnowEffect();
-});
 </script>
   </body>
 </html>
