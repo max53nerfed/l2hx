@@ -1,0 +1,37 @@
+User-Agent: *
+Disallow: /old
+Disallow: /*?*
+Disallow: /filter*
+Disallow: /d-day/*
+Disallow: /engine/
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /page/
+Disallow: /rssclick/
+Disallow: /stat
+Disallow: /server/
+Disallow: /quests/
+Disallow: /out.php
+Disallow: /out?id=*
+Disallow: /out-right-banner?id=*
+Disallow: /out-top-banner?id=*
+
+User-Agent: Yandex
+Disallow: /*?*
+Disallow: /filter*
+Disallow: /d-day/*
+Disallow: /engine/
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /page/
+Disallow: /rssclick/
+Disallow: /stat
+Disallow: /server/
+Disallow: /quests/
+Disallow: /out.php
+Disallow: /out?id=*
+Disallow: /out-right-banner?id=*
+Disallow: /out-top-banner?id=* 
+Clean-param:etext&utm_source&utm_medium&utm_campaign&utm_term&utm_content&yadclid&gclid /
+
+Sitemap: https://l2oops.com/sitemap.xml

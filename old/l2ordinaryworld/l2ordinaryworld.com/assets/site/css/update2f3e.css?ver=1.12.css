@@ -1,0 +1,64 @@
+.download-item-block {
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+}
+.download-item-block p:first-child {
+  margin-top: 0px;
+}
+
+.inner-features__content-box .text-area h2:first-child {
+  text-align: center;
+}
+.inner-features__content-box .text-area p.text-center {
+  text-align: center;
+}
+.inner-features__content-box .text-area *.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.inner-features__content-box .text-area table thead td {
+  background: #6f6551;
+}
+.inner-features__content-box .text-area table td.has-icon {
+  width: auto;
+}
+.inner-features__content-box .text-area table td.has-icon img {
+  display: block;
+  height: 40px;
+  margin: 0 auto;
+}
+.inner-features__content-box .text-area table td.has-icon-and-text img {
+  display: block;
+  height: 32px;
+  margin: 0 auto;
+  border-radius: 32px;
+  margin-bottom: 5px;
+}
+
+.footer__menu {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  gap: 20px;
+  color: #6f6551;
+}
+
+@media (max-width: 1024px) {
+  .patch-list .patch-list-content {
+    width: 50%;
+  }
+}
+@media (max-width: 680px) {
+  .patch-list .patch-list-content {
+    width: 100%;
+  }
+}
+
+.patch-title {
+  font-family: "Angelus Medieval";
+}
+.patch-title p {
+  font-family: "Angelus Medieval" !important;
+  line-height: 38px;
+}

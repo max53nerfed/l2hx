@@ -1,0 +1,56 @@
+function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor((total / 1000) % 60);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  const clock = document.getElementById(id);
+  const daysSpan = clock.querySelector('.days');
+  const hoursSpan = clock.querySelector('.hours');
+  const minutesSpan = clock.querySelector('.minutes');
+  const secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    const t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      daysSpan.parentElement.innerHTML = "LIVE!";
+      clearInterval(timeinterval);
+    }
+  }
+
+  const timeinterval = setInterval(updateClock, 1000);
+  updateClock();
+}
+function displayCountdown(year, month, day, hour, minute) {
+  var timestamp = Date.UTC(year, month, day, hour, minute);
+  var element = document.currentScript.parentElement;
+  jQuery(element).append('<span id="countdown-' + timestamp + '"><span class="days"></span> <span class="smalltext">Days</span> <span class="hours"></span> <span class="smalltext">Hours</span> <span class="minutes"></span> <span class="smalltext">Minutes</span> <span class="seconds"></span> <span class="smalltext">Seconds</span></span>');
+  var deadline = new Date(timestamp);
+  console.log(deadline);
+  initializeClock('countdown-' + timestamp, deadline);
+}
+
+function displayCountdownMin(element, year, month, day, hour, minute) {
+  var timestamp = Date.UTC(year, month, day, hour, minute);
+  jQuery(element).append('<span id="countdown-' + timestamp + '"><span class="days"></span><span class="smalltext">d</span> <span class="hours"></span><span class="smalltext">h</span> <span class="minutes"></span><span class="smalltext">m</span> <span class="seconds"></span><span class="smalltext">s</span></span>');
+  var deadline = new Date(timestamp);
+  console.log(deadline);
+  initializeClock('countdown-' + timestamp, deadline);
+}

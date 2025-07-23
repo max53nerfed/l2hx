@@ -1,0 +1,3089 @@
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #161616;
+    border-radius: 5px;
+}
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #252525;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    font-family: 'Intro-Book';
+    background: #101010;
+    color: #c0c0c0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: -10;
+}
+
+ul, ol, li, html, body {
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol, li {
+    display: block;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #c0c0c0;
+}
+
+mark {
+    color: #e4c571;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+*:focus {
+    outline: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.color-accent {
+    color: #e4c571;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.show-smartphone {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.play {
+    width: 168px;
+    height: 44px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: url(../img/play.png) top no-repeat;
+}
+
+.play:after {
+    content: "";
+    position: absolute;
+    width: 168px;
+    height: 44px;
+    background: url(../img/play.png) bottom no-repeat;
+    transition: all .2s linear;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.play:hover:after {
+    opacity: 1;
+    visibility: visible; 
+}
+
+#language {
+    height: 95vh;
+}
+
+#language .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#language .wrapper ul li {
+    display: inline-block;
+}
+
+#language .wrapper ul li a { 
+    text-transform: uppercase;
+    display: block;
+    padding: 12px 15px;
+    letter-spacing: 1px;
+    transition: all .25s linear 0s;
+}
+
+.vote-wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1100;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background: rgba(22, 22, 22, 0.8);
+}
+
+.vote-wrapper ul {
+    max-width: 550px;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.vote-wrapper ul li {
+    padding: 12px 15px;
+}
+
+.vote-wrapper ul li .vote {
+    width: 168px;
+    height: 44px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: url(../img/play.png) top no-repeat;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.vote-wrapper ul li .vote:after {
+    content: "";
+    position: absolute;
+    width: 168px;
+    height: 44px;
+    background: url(../img/play.png) bottom no-repeat;
+    transition: all .2s linear;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.vote-wrapper ul li .vote:hover:after {
+    opacity: 1;
+    visibility: visible; 
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.65);
+    animation-delay: 3s;
+    animation-name: fadeInDown;
+}
+
+header:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 60px;
+    z-index: -1;
+    background: url(../img/header_shadow.png) repeat-x;
+}
+
+header .wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .wrapper>div {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header nav {
+    margin: auto;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-right: 41px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    border-bottom: 1px solid transparent;
+    transition: all .25s linear 0s;
+}
+
+header nav ul li a.language img {
+    position: absolute;
+}
+
+header nav ul li a.language div {
+    position: relative;
+    left: 30px;
+}
+
+header nav ul li:not(:first-child) a.menu:before { 
+    content: "";
+    position: absolute;
+    left: -27px;
+    width: 8px;
+    height: 14px;
+    background: url(../img/header_separator.png) bottom no-repeat;
+}
+
+header nav ul li a:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e4c571;
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: calc(50% - 5px);
+    transition: all .25s linear 0s;
+}
+
+header nav ul li a.active {
+    color: #e4c571;
+    border-color: #e4c571;
+    transition: all .25s linear 0s;
+}
+
+header nav ul li a.active:after {
+    display: block;
+}
+
+#home {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+
+#home .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+    transition: all .3s ease 0s;
+}
+
+#home .wrapper .text {
+    max-width: 550px;
+    text-shadow: 0px 0px 10px rgba(0,0,0);
+}
+
+#home .wrapper .text .separator {
+    display: block;
+    margin: 0 auto;
+    animation-name: fadeInUp;
+}
+
+#home .wrapper .text h1 {
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 1.8px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    animation-delay: 0.3s;
+    animation-name: fadeInUp;
+}
+
+#home .wrapper .text p {
+    line-height: 1.5em;
+    letter-spacing: .8px;
+    padding-bottom: 25px;
+    color: #fff;
+    animation-delay: 0.5s;
+    animation-name: fadeInUp;
+}
+
+#home .wrapper .text .logo {
+    position: relative;
+    top: -37px;
+    animation-delay: 0.7s;
+    animation-name: fadeInUp;
+    z-index: -1;
+}
+
+#home .wrapper .play {
+    position: relative;
+    top: -55px;
+    animation-delay: 2.8s;
+    animation-name: fadeInUp;
+    z-index: 1;
+}
+
+#home .wrapper .featureline {
+    display: flex;
+    width: 750px;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 80px;
+}
+
+#home .wrapper .featureline .featureicon {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    text-align: center;
+    z-index: 4;
+    animation-name: fadeInUp;
+}
+
+.featureicon:before, .featureicon:after {
+    content: "";
+    height: 7px;
+    position: absolute;
+    top: 28px;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+    animation-name: fadeIn35;
+}
+
+.featureicon:first-child:before {
+    left: -124px;
+    width: 114px;
+    background-size: 114px;
+    background: url(../img/feature_divider_first.png) bottom no-repeat;
+    animation-delay: 2.1s; 
+}
+
+.featureicon:nth-child(2):before {
+    left: -90px;
+    width: 80px;
+    background-size: 80px;
+    background: url(../img/feature_divider.png) bottom no-repeat;
+    animation-delay: 2.2s; 
+}
+
+.featureicon:nth-child(3):before {
+    left: -90px;
+    width: 80px;
+    background-size: 80px;
+    background: url(../img/feature_divider.png) bottom no-repeat;
+    animation-delay: 2.3s; 
+}
+
+.featureicon:nth-child(4):before {
+    left: -90px;
+    width: 80px;
+    background-size: 80px;
+    background: url(../img/feature_divider.png) bottom no-repeat;
+    animation-delay: 2.4s; 
+}
+
+.featureicon:nth-child(5):before {
+    left: -90px;
+    width: 80px;
+    background-size: 80px;
+    background: url(../img/feature_divider.png) bottom no-repeat;
+    animation-delay: 2.5s; 
+}
+
+.featureicon:nth-child(5):after {
+    right: -124px;
+    width: 114px;
+    background-size: 114px;
+    background: url(../img/feature_divider_first.png) bottom no-repeat;
+    transform: rotate(.5turn);
+    animation-delay: 2.6s; 
+}
+
+#home .wrapper .featureline .featureicon .featurelink svg {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    opacity: .35;
+    fill: #fff;
+    transition: all .25s linear 0s;
+}
+
+#home .wrapper .featureline .featureicon .featurelink:hover svg {
+    fill: #e4c571;
+    opacity: 1;
+    transition: all .25s linear 0s;
+}
+
+#home .wrapper .featureline .featuredesc {
+    width: 140px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-left: -34px;
+}
+
+#home:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(../img/clouds_bottom.png) bottom no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 365px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#home .video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #101010;
+    z-index: 1;
+    animation-name: fadeIn;
+}
+
+#home .video video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: .4;
+    z-index: 0;
+}
+
+#home .video .pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../img/lines.png) repeat 50% 0;
+    opacity: .3;
+    z-index: 1;
+}
+
+#features {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+#features .sidebar {
+    position: fixed;
+    background-color: #1b1b1b;
+    max-width: 180px;
+    width: 100%;
+    height: 100%;
+    padding: 80px 20px 20px 20px;
+}
+
+#features .sidebar ul {
+    list-style-type: none;
+}
+
+#features .sidebar .menu ul {
+    padding: 7px 0px 7px 17px;
+}
+
+#features .sidebar .menu li {
+    padding: 10px 0px 0px 0px;
+}
+
+#features .sidebar .menu .caret {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+#features .sidebar .menu a {
+    transition: all .25s linear 0s;
+}
+
+#features .sidebar .menu a.active {
+    color: #e4c571;
+}
+
+#features .sidebar .menu .nested a.subtopic {
+    font-size: 13px;
+}
+
+#features .sidebar .menu .caret svg {
+    fill: #c0c0c0;
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: all .25s linear 0s;
+}
+
+#features .sidebar .menu .caret svg:hover {
+    fill: #e4c571;
+}
+
+#features .sidebar .menu .caret-down svg {
+    transform: rotate(0deg);
+}
+
+#features .sidebar .menu .nested {
+    display: none;
+}
+
+#features .sidebar .menu ul.active {
+    display: block;
+}
+
+#features .wrapper {
+    min-width: 750px;
+    width: 100%;
+    padding: 80px 15px 20px 235px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: .7px;
+}
+
+#features .wrapper .topic:before, #features .wrapper .subtopic:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -70px; 
+    height: 70px; 
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+#features .wrapper h1 {
+    color: #e4c571;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 36px;
+    line-height: 44px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#features .wrapper h2 {
+    color: #e4c571;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 21px;
+    line-height: 44px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+
+#features .wrapper table {
+    min-width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#features .wrapper td, #features .wrapper th {
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+    border-bottom: 1px solid #323232;
+    min-width: 150px;
+}
+
+#features .wrapper .bigtable td, #features .wrapper .bigtable th {
+    min-width: 10px;
+}
+
+#features .wrapper .picturetable td, #features .wrapper .picturetable th {
+    padding: 10px 5px 10px 5px;
+}
+
+#features .wrapper .bigtable .itemname {
+    white-space: nowrap;
+}
+
+#features .wrapper .bigtable .itemdesc {
+    font-size: 11px;
+}
+
+.anchor {
+    visibility: hidden;
+    min-height: 40px;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.section-header h1 {
+    font-family: 'TCAdministerRR-Bold';
+    letter-spacing: .5px;
+    font-size: 36px;
+    margin: 35px 0 25px;
+    color: #e4c571;
+    text-transform: uppercase;
+    animation-delay: 0s;
+    animation-name: fadeInUp;
+}
+
+.section-header p {
+    text-align: center;
+    max-width: 700px;
+    font-size: 13px;
+    letter-spacing: .7px;
+    line-height: 1.5em;
+    margin: 0px;
+    animation-delay: 0.2s;
+    animation-name: fadeInUp;
+}
+
+#personalization {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: calc(max(950px, 100%));
+}
+
+#personalization .char {
+    position: absolute;
+    top: 234px;
+    height: 714px;
+    min-height: 714px;
+    transition: all .25s linear 0s;
+}
+
+#personalization .disabled {
+    filter: grayscale(90%) opacity(25%);
+}
+
+#personalization .label {
+    position: absolute;
+    font-style: italic;
+    text-align: right;
+    pointer-events: none;
+}
+
+#personalization .label .title {
+    display: block;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 22px;
+    line-height: 32px;
+    color: #e4c571;
+}
+
+#personalization .enabled .label .title {
+    animation-delay: 0.1s;
+    animation-name: fadeInLeft;
+}
+
+#personalization .none .label .title, #personalization .disabled .label .title {
+    animation-delay: 0.3s;
+    animation-name: fadeOutLeft;
+}
+
+#personalization .label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 1.5px;
+    height: 60px;
+    transform: rotate(15deg);
+    background: #e4c571;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+}
+
+#personalization .enabled .label:before {
+    animation-delay: 0s;
+    animation-name: resizeY15Down;
+}
+
+#personalization .none .label:before, #personalization .disabled .label:before {
+    animation-delay: 0s;
+    animation-name: resizeY15Up;
+}
+
+#personalization .label .desc {
+    display: block;
+    font-size: 13px;
+    padding-right: 5px;
+}
+
+#personalization .enabled .label .desc {
+    animation-delay: 0.3s;
+    animation-name: fadeInLeft;
+}
+
+#personalization .none .label .desc, #personalization .disabled .label .desc {
+    animation-delay: 0.1s;
+    animation-name: fadeOutLeft;
+}
+
+#personalization .point {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+}
+
+#personalization .point:after {
+    display: block;
+    content: "";
+    width: 28px;
+    height: 28px;
+    background: url(../img/customization/point.png) center no-repeat;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+}
+
+#personalization .enabled .point:after {
+    animation-name: resizeIn45;
+}
+
+#personalization .none .point:after, #personalization .disabled .point:after {
+    animation-name: resizeOut45;
+}
+
+#personalization .point .desc {
+    position: absolute;
+    font-size: 13px;
+    left: 14px;
+    top: 14px;
+    width: 308px;
+    height: 65px;
+    padding: 18px 35px 18px 30px;
+    line-height: 20px;
+    background: url(../img/customization/bg1.png) no-repeat;
+    z-index: 1;
+    pointer-events: none;
+    animation-name: resizeOutLeft;
+    animation-duration: .5s;
+}
+
+#personalization .focus .desc {
+    animation-name: resizeInLeft;
+}
+
+#personalization .point .desc div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+#personalization .point .desc:before {
+    position: relative;
+    content: "";
+    min-width: 20px;
+    height: 12ex;
+    float: left;
+    shape-outside: polygon(0 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+#personalization .point .flip:before {
+    shape-outside: polygon(0 0, 100% 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+#personalization .warlord {
+    left: calc(50% - 277px);
+    animation-delay: 0.7s;
+    animation-name: fadeInLeft;
+}
+
+#personalization .warlord .label {
+    left: -150px;
+    top: 120px;
+    width: 400px;
+}
+
+#personalization .warlord .point:nth-child(3) {
+    left: 133px;
+    top: 275px;
+}
+
+#personalization .warlord .point:nth-child(4) {
+    left: 191px;
+    top: 387px;
+}
+
+#personalization .warlord .point:nth-child(5) {
+    left: 98px;
+    top: 516px;
+}
+
+#personalization .warlord .point:nth-child(3):after {
+    animation-delay: 0.1s;
+}
+
+#personalization .warlord .point:nth-child(4):after {
+    animation-delay: 0.3s;
+}
+
+#personalization .warlord .point:nth-child(5):after {
+    animation-delay: 0.5s;
+}
+
+#personalization .warlord .point:nth-child(3) .desc {
+    top: -87px;
+    left: -359px;
+    animation-name: resizeOutRight;
+}
+
+#personalization .warlord .focus:nth-child(3) .desc {
+    animation-name: resizeInRight;
+}
+
+#personalization .plainswalker {
+    left: calc(50% - 65px);
+    animation-delay: 0.7s;
+    animation-name: fadeInRight;
+}
+
+#personalization .plainswalker .label {
+    left: -100px;
+    top: 190px;
+    width: 400px;
+}
+
+#personalization .plainswalker .point:nth-child(3) {
+    left: 146px;
+    top: 264px;
+}
+
+#personalization .plainswalker .point:nth-child(4) {
+    left: 192px;
+    top: 383px;
+}
+
+#personalization .plainswalker .point:nth-child(5) {
+    left: 124px;
+    top: 466px;
+}
+
+#personalization .plainswalker .point:nth-child(3):after {
+    animation-delay: 0.1s;
+}
+
+#personalization .plainswalker .point:nth-child(4):after {
+    animation-delay: 0.3s;
+}
+
+#personalization .plainswalker .point:nth-child(5):after {
+    animation-delay: 0.5s;
+}
+
+#personalization .plainswalker .point:nth-child(3) .desc {
+    left: -359px;
+    background: url(../img/customization/bg2.png) no-repeat;
+    animation-name: resizeOutRight;
+}
+
+#personalization .plainswalker .focus:nth-child(3) .desc {
+    animation-name: resizeInRight;
+}
+
+#personalization .spellhowler {
+    left: calc(50% - 420px);
+    animation-delay: 1s;
+    animation-name: fadeInLeft;
+}
+
+#personalization .spellhowler .label {
+    left: -200px;
+    top: 180px;
+    width: 400px;
+}
+
+#personalization .spellhowler .point:nth-child(3) {
+    left: 135px;
+    top: 250px;
+}
+
+#personalization .spellhowler .point:nth-child(4) {
+    left: 130px;
+    top: 373px;
+}
+
+#personalization .spellhowler .point:nth-child(5) {
+    left: 181px;
+    top: 448px;
+}
+
+#personalization .spellhowler .point:nth-child(6) {
+    left: 51px;
+    top: 476px;
+}
+
+#personalization .spellhowler .point:nth-child(3):after {
+    animation-delay: 0.1s;
+}
+
+#personalization .spellhowler .point:nth-child(4):after {
+    animation-delay: 0.3s;
+}
+
+#personalization .spellhowler .point:nth-child(5):after {
+    animation-delay: 0.5s;
+}
+
+#personalization .spellhowler .point:nth-child(6):after {
+    animation-delay: 0.7s;
+}
+
+#personalization .shillienknight {
+    left: calc(50% + 156px);
+    animation-delay: 1s;
+    animation-name: fadeInRight;
+}
+
+#personalization .shillienknight .label {
+    left: -130px;
+    top: 210px;
+    width: 400px;
+}
+
+#personalization .shillienknight .point:nth-child(3) {
+    left: 174px;
+    top: 275px;
+}
+
+#personalization .shillienknight .point:nth-child(4) {
+    left: 163px;
+    top: 379px;
+}
+
+#personalization .shillienknight .point:nth-child(5) {
+    left: 221px;
+    top: 494px;
+}
+
+#personalization .shillienknight .point:nth-child(6) {
+    left: 50px;
+    top: 535px;
+}
+
+#personalization .shillienknight .point:nth-child(3):after {
+    animation-delay: 0.1s;
+}
+
+#personalization .shillienknight .point:nth-child(4):after {
+    animation-delay: 0.3s;
+}
+
+#personalization .shillienknight .point:nth-child(5):after {
+    animation-delay: 0.5s;
+}
+
+#personalization .shillienknight .point:nth-child(6):after {
+    animation-delay: 0.7s;
+}
+
+#personalization .shillienknight .point:nth-child(6) .desc {
+    top: -87px;
+    left: -359px;
+    animation-name: resizeOutRight;
+}
+
+#personalization .shillienknight .focus:nth-child(6) .desc {
+    animation-name: resizeInRight;
+}
+
+#personalization .sorcerer {
+    left: calc(50% - 730px);
+    animation-delay: 1.3s;
+    animation-name: fadeInLeft;
+}
+
+#personalization .sorcerer .label {
+    left: -75px;
+    top: 210px;
+    width: 400px;
+}
+
+#personalization .sorcerer .point:nth-child(3) {
+    left: 217px;
+    top: 284px;
+}
+
+#personalization .sorcerer .point:nth-child(4) {
+    left: 265px;
+    top: 340px;
+}
+
+#personalization .sorcerer .point:nth-child(5) {
+    left: 43px;
+    top: 550px;
+}
+
+#personalization .sorcerer .point:nth-child(3):after {
+    animation-delay: 0.1s;
+}
+
+#personalization .sorcerer .point:nth-child(4):after {
+    animation-delay: 0.3s;
+}
+
+#personalization .sorcerer .point:nth-child(5):after {
+    animation-delay: 0.5s;
+}
+
+#personalization .sorcerer .point:nth-child(5) .desc {
+    top: -87px;
+    background: url(../img/customization/bg2.png) no-repeat;
+}
+
+#personalization .warsmith {
+    left: calc(50% + 398px);
+    animation-delay: 1.3s;
+    animation-name: fadeInRight;
+}
+
+#personalization .warsmith .label {
+    left: -150px;
+    top: 230px;
+    width: 400px;
+}
+
+#personalization .warsmith .point:nth-child(3) {
+    left: 213px;
+    top: 366px;
+}
+
+#personalization .warsmith .point:nth-child(4) {
+    left: 74px;
+    top: 404px;
+}
+
+#personalization .warsmith .point:nth-child(5) {
+    left: 136px;
+    top: 490px;
+}
+
+#personalization .warsmith .point:nth-child(6) {
+    left: 45px;
+    top: 569px;
+}
+
+#personalization .warsmith .point:nth-child(3):after {
+    animation-delay: 0.1s;
+}
+
+#personalization .warsmith .point:nth-child(4):after {
+    animation-delay: 0.3s;
+}
+
+#personalization .warsmith .point:nth-child(5):after {
+    animation-delay: 0.5s;
+}
+
+#personalization .warsmith .point:nth-child(6):after {
+    animation-delay: 0.7s;
+}
+
+#personalization .warsmith .point:nth-child(3) .desc {
+    top: -87px;
+    left: -359px;
+    animation-name: resizeOutRight;
+}
+
+#personalization .warsmith .focus:nth-child(3) .desc {
+    animation-name: resizeInRight;
+}
+
+#personalization .warsmith .point:nth-child(4) .desc {
+    top: -87px;
+    left: -359px;
+    animation-name: resizeOutRight;
+}
+
+#personalization .warsmith .focus:nth-child(4) .desc {
+    animation-name: resizeInRight;
+}
+
+#personalization .warsmith .point:nth-child(5) .desc {
+    left: -359px;
+    background: url(../img/customization/bg2.png) no-repeat;
+    animation-name: resizeOutRight;
+}
+
+#personalization .warsmith .focus:nth-child(5) .desc {
+    animation-name: resizeInRight;
+}
+
+#personalization .warsmith .point:nth-child(6) .desc {
+    left: -359px;
+    background: url(../img/customization/bg2.png) no-repeat;
+    animation-name: resizeOutRight;
+}
+
+#personalization .warsmith .focus:nth-child(6) .desc {
+    animation-name: resizeInRight;
+}
+
+#content {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #101010 url(../img/content/background.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+#content .slider {
+    position: relative;
+    border-top: 3px solid #e4c571;
+    border-bottom: 3px solid #e4c571;
+    margin: 60px 0;
+    animation-name: fadeIn;
+}
+
+#content .slider .slider-nav {
+    position: absolute;
+    top: calc(50% - 30px);
+    background: 0 0;
+    width: 30px;
+    padding: 0;
+    border: 0;
+    height: 60px;
+    z-index: 3;
+    opacity: .5;
+}
+
+#content .slider .slider-nav svg {
+    fill: #e4c571;
+    pointer-events: none;
+}
+
+#content .slider .slider-nav.prev {
+    left: 70px;
+}
+#content .slider .slider-nav.next {
+    right: 70px;
+}
+
+#content .slider .slider-pages {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#content .slider .slider-pages li {
+    position: relative;
+}
+
+#content .slider .slider-pages li span {
+    display: block;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 26px;
+    color: #fff;
+    padding-top: 9px;
+    text-align: center;
+    margin: 0 16px;
+    width: 48px;
+    height: 36px;
+    background: url(../../l2sanctuary.pl/img/circle.svg);
+    background-size: 100%;
+    transform: scale(0.75);
+    opacity: .5;
+    transition: all .2s linear 0s;
+}
+
+#content .slider .slider-pages li:nth-child(1) span {
+    padding-left: 1px;
+    width: 47px;
+}
+
+#content .slider .slider-pages li.active span {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#content .slider .slider-pages li:last-child:after {
+    display: none;
+}
+
+#content .slider .slider-pages li:after {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 70px;
+    width: 20px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+#content .slider .slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+}
+
+#content .slider .slider-wrapper>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+#content .slider:not(.hidden) .slider-wrapper .visible {
+    visibility: visible;
+}
+
+#content .slider .slider-wrapper>div:nth-child(1) {
+    background: url(../img/content/bg1.jpg) center no-repeat;
+}
+
+#content .slider .slider-wrapper>div:nth-child(2) {
+    background: url(../img/content/bg2.jpg) center no-repeat;
+}
+
+#content .slider .slider-wrapper>div:nth-child(3) {
+    background: url(../img/content/bg3.jpg) center no-repeat;
+}
+
+#content .slider .slider-wrapper>div:nth-child(4) {
+    background: url(../img/content/bg4.jpg) center no-repeat;
+}
+
+#content .slider .slider-wrapper>div:nth-child(5) {
+    background: url(../img/content/bg5.jpg) center no-repeat;
+}
+
+#content .slider .slider-wrapper>div:nth-child(6) {
+    background: url(../img/content/bg6.jpg) center no-repeat;
+}
+
+#content .slider .slider-wrapper>div .slider-text {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 960px;
+    height: 550px;
+    margin: auto;
+    padding: 0px 150px 50px 150px;
+    z-index: 2;
+}
+
+#content .slider .slider-wrapper>div .slider-text>* {
+    max-width: 550px;
+    padding: 0px 30% 0px 0px;
+}
+
+#content .slider .slider-wrapper>div .slider-text h1 {
+    font-family: 'TCAdministerRR-Bold';
+    text-shadow: -1px 1px 1px #000;
+    font-size: 18px;
+    letter-spacing: .5px;
+    line-height: 1.2em;
+    letter-spacing: 1.2px;
+    word-spacing: 3px;
+    color: #e4c571;
+    text-transform: uppercase;
+    margin: 12px 0;
+    animation-name: fadeInUp;
+}
+
+#content .slider .slider-wrapper>div .slider-text p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .7px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    text-shadow: -1px 1px 1px #000;
+    animation-delay: 0.2s;
+    animation-name: fadeInUp;
+}
+
+#content .slider .slider-wrapper>div .slider-text .icons {
+    animation-delay: 0.4s;
+    animation-name: fadeInUp;
+}
+
+#content .slider .slider-wrapper>div .slider-text .icons>img {
+    border: 5px solid rgba(0, 0, 0, 0.25);
+    margin-right: 5px;
+}
+
+#content .slider .slider-wrapper>div .slider-image {
+    position: absolute;
+    height: 600px;
+    bottom: 0;
+    z-index: 1;
+    animation-name: fadeInRight;
+}
+
+#content .slider .slider-wrapper>div:nth-child(1) .slider-image {
+    right: calc(min(0px, 50% - 918px));
+}
+
+#content .slider .slider-wrapper>div:nth-child(2) .slider-image {
+    right: calc(min(0px, 60% - 741px));
+}
+
+#content .slider .slider-wrapper>div:nth-child(3) .slider-image {
+    right: calc(min(0px, 40% - 775px));
+}
+
+#content .slider .slider-wrapper>div:nth-child(4) .slider-image {
+    right: calc(min(0px, 60% - 772px));
+}
+
+#content .slider .slider-wrapper>div:nth-child(5) .slider-image {
+    right: calc(min(0px, 80% - 1009px));
+}
+
+#content .slider .slider-wrapper>div:nth-child(6) .slider-image {
+    right: calc(min(0px, 60% - 965px));
+}
+
+#rules {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background: url(../img/rules/background.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+#rules .slider {
+    position: relative;
+    width: 100%;
+    max-width: calc(min(1192px, 100% - 200px));
+    height: 500px;
+    border: 3px solid #e4c571;
+    padding: 2px;
+    margin: 70px auto;
+    animation-name: fadeIn;
+}
+
+#rules .slider:before, #rules .slider:after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    width: 12px;
+    height: 522px;
+    background: url(../img/rules/frame.png) center no-repeat;
+}
+
+#rules .slider:after {
+    left: calc(100% - 3px);
+    transform: rotate(180deg);
+}
+
+#rules .slider .slider-nav {
+    position: absolute;
+    top: calc(50% - 30px);
+    background: 0 0;
+    width: 30px;
+    padding: 0;
+    border: 0;
+    height: 60px;
+    z-index: 3;
+    opacity: .5;
+}
+
+#rules .slider .slider-nav svg {
+    fill: #e4c571;
+    pointer-events: none;
+}
+
+#rules .slider .slider-nav.prev {
+    left: -70px;
+}
+
+#rules .slider .slider-nav.next {
+    right: -70px;
+}
+
+#rules .slider .slider-pages {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#rules .slider .slider-pages li {
+    position: relative;
+}
+
+#rules .slider .slider-pages li span {
+    display: block;
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    background: #e4c571;
+    background-size: 100%;
+    transform: scale(0.75) rotate(45deg);
+    opacity: .5;
+    transition: all .2s linear 0s;
+}
+
+#rules .slider .slider-pages li.active span {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+}
+
+#rules .slider .slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    z-index: 1;
+}
+
+#rules .slider .slider-wrapper>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+#rules .slider:not(.hidden) .slider-wrapper .visible {
+    visibility: visible;
+}
+
+#rules .slider .slider-wrapper>div:nth-child(1) {
+    background: url(../img/rules/bg1.jpg) center no-repeat;
+}
+
+#rules .slider .slider-wrapper>div:nth-child(2) {
+    background: url(../img/rules/bg2.jpg) center no-repeat;
+}
+
+#rules .slider .slider-wrapper>div:nth-child(3) {
+    background: url(../img/rules/bg3.jpg) center no-repeat;
+}
+
+#rules .slider .slider-wrapper>div:nth-child(4) {
+    background: url(../img/rules/bg4.jpg) center no-repeat;
+}
+
+#rules .slider .slider-wrapper>div .slider-text {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 600px;
+    height: 500px;
+    margin: auto;
+    z-index: 2;
+}
+
+#rules .slider .slider-wrapper>div .slider-text .separator {
+    display: block;
+    margin: 0 auto;
+    animation-name: fadeInUp;
+}
+
+#rules .slider .slider-wrapper>div .slider-text h1 {
+    font-family: 'TCAdministerRR-Bold';
+    text-shadow: -1px 1px 1px #000;
+    font-size: 28px;
+    letter-spacing: .5px;
+    line-height: 1.2em;
+    color: #e4c571;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 12px 0;
+    animation-delay: 0.2s;
+    animation-name: fadeInUp;
+}
+
+#rules .slider .slider-wrapper>div .slider-text p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .7px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: -1px 1px 1px #000;
+    margin-bottom: 45px;
+    animation-delay: 0.4s;
+    animation-name: fadeInUp;
+}
+
+#rules .slider .slider-wrapper>div .slider-image {
+    position: absolute;
+    height: 500px;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    animation-name: fadeInLeft;
+}
+
+#rules .slider .slider-wrapper>div:nth-child(1) .slider-image {
+    left: calc(min(0px, 50% - 392px));
+}
+
+#rules .slider .slider-wrapper>div:nth-child(2) .slider-image {
+    left: calc(min(0px, 50% - 436px));
+}
+
+#rules .slider .slider-wrapper>div:nth-child(3) .slider-image {
+    left: calc(min(0px, 50% - 405px));
+}
+
+#rules .slider .slider-wrapper>div:nth-child(4) .slider-image {
+    left: calc(min(0px, 50% - 352px));
+}
+
+#olympiad {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background: url(../img/olympiad/background.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+#olympiad .wrapper {
+    width: 100%;
+    max-width: 1580px;
+    padding: 0 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#olympiad .wrapper .days {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 510px;
+    margin-top: 60px;
+    z-index: 2;
+}
+
+#olympiad .wrapper .days>div {
+    display: flex;
+    align-items: flex-end;
+    width: calc(20% - 20px);
+    background-color: #151515;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 30px calc(min(30px, 2%));
+    min-height: 377px;
+    box-sizing: border-box;
+    animation-name: fadeInDown;
+}
+
+#olympiad .wrapper .days>div:nth-child(1) {
+    background-image: url(../img/olympiad/day1.jpg);
+    animation-delay: 0.4s;
+}
+
+#olympiad .wrapper .days>div:nth-child(2) {
+    background-image: url(../img/olympiad/day2.jpg);
+    animation-delay: 0.6s;
+}
+
+#olympiad .wrapper .days>div:nth-child(3) {
+    background-image: url(../img/olympiad/day3.jpg);
+    animation-delay: 0.8s;
+}
+
+#olympiad .wrapper .days>div:nth-child(4) {
+    background-image: url(../img/olympiad/day4.jpg);
+    animation-delay: 1s;
+}
+
+#olympiad .wrapper .days>div:nth-child(5) {
+    background-image: url(../img/olympiad/day5.jpg);
+    animation-delay: 1.2s;
+}
+
+#olympiad .wrapper .days>div .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#olympiad .wrapper .days>div .content i {
+    width: 61px;
+    height: 51px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+#olympiad .wrapper .days>div .content i:before {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 51px;
+    margin-top: 5px;
+    background: url(../../l2sanctuary.pl/img/circle.svg) center no-repeat;
+    background-size: 100%;
+    transform: rotate(180deg);
+    opacity: .4;
+    z-index: -1;
+}
+
+#olympiad .wrapper .days>div:hover .content i img {
+    animation-duration: .75s;
+    animation-fill-mode: both;
+    animation-name: bounceIn;
+}
+
+#olympiad .wrapper .days>div .content strong {
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 15px auto 25px;
+    max-width: 200px;
+}
+
+#olympiad .wrapper .days>div .content span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 10px 0px;
+    width: 100%;
+    text-transform: uppercase;
+    background:rgba(255,255,255,.05);
+}
+
+#olympiad .wrapper .days>div .content p {
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #808080;
+    visibility: hidden;
+    height: 0;
+    margin: 0px;
+    opacity: 0;
+    display: none;
+}
+
+#security {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    z-index: -2;
+}
+
+#security:before, #security:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(../img/clouds_bottom.png) bottom no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 365px;
+    pointer-events: none;
+    z-index: 50;
+}
+
+#security:before {
+    top: 0;
+    bottom: auto;
+    transform: rotate(180deg);
+    z-index: 1;
+}
+
+#security .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/security/background.jpg) 50% 50% no-repeat;
+    background-size: calc(min(135%, 2560px)) calc(min(135%, 1080px));
+    animation-name: fadeIn;
+    z-index: -2;
+}
+
+#security .pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../img/lines.png) repeat 50% 0;
+    opacity: .3;
+    z-index: -1;
+}
+
+#security .char {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    right: 0;
+    bottom: 0;
+    background: url(../img/security/char.png) 50% 50% no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    animation-delay: 0.2s;
+    animation-name: fadeIn;
+}
+
+#security .flames {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/security/flames.png) 50% 50% no-repeat;
+    background-size: calc(min(127%, 2436px)) calc(min(127%, 1076px));
+    pointer-events: none;
+    animation-delay: 0.4s;
+    animation-name: fadeInLeft;
+}
+
+#security .enemy:nth-child(7) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/security/enemy1.png) 50% 50% no-repeat;
+    background-size: calc(min(123%, 2356px)) calc(min(123%, 1440px));
+    pointer-events: none;
+    animation-delay: 1s;
+    animation-name: fadeInUp;
+    z-index: 20;
+}
+
+#security .enemy:nth-child(8) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/security/enemy2.png) 50% 50% no-repeat;
+    background-size: calc(min(123%, 2356px)) calc(min(123%, 1440px));
+    pointer-events: none;
+    animation-delay: 1.6s;
+    animation-name: fadeInUp;
+    z-index: 30;
+}
+
+#security .points, #security .backpoints {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: screen;
+}
+
+#security .backpoints {
+    z-index: -1;
+}
+
+#security .point {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    animation-name: fadeInDown;
+}
+
+#security .point .desc {
+    position: absolute;
+    font-size: 13px;
+    color: #000;
+    left: 35px;
+    top: -66px;
+    width: 308px;
+    height: 65px;
+    padding: 18px 35px 18px 30px;
+    line-height: 20px;
+    background: url(../img/security/bg2.png) no-repeat;
+    z-index: 1;
+    pointer-events: none;
+    animation-name: resizeOutLeft;
+    animation-duration: .15s;
+}
+
+#security .focus .desc {
+    animation-name: resizeInLeft;
+}
+
+#security .points .point:nth-child(4) .desc, #security .points .point:nth-child(5) .desc, #security .points .point:nth-child(6) .desc {
+    left: -338px;
+    background: url(../img/security/bg1.png) no-repeat;
+    animation-name: resizeOutRight;
+}
+
+#security .points .focus:nth-child(4) .desc, #security .points .focus:nth-child(5) .desc, #security .points .focus:nth-child(6) .desc {
+    animation-name: resizeInRight;
+}
+
+#security .point .desc div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+#security .point .desc:before {
+    position: relative;
+    content: "";
+    min-width: 20px;
+    height: 12ex;
+    float: left;
+    shape-outside: polygon(0 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+#security .point .flip:before {
+    shape-outside: polygon(0 0, 100% 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+#security .points .point:nth-child(1) {
+    left: calc(50% - 320px);
+    top: calc(50%);
+    animation-delay: 2s;
+}
+
+#security .points .point:nth-child(2) {
+    left: calc(50% - 210px);
+    top: calc(50% + 35px);
+    animation-delay: 2.2s;
+}
+
+#security .points .point:nth-child(3) {
+    left: calc(50% - 90px);
+    top: calc(50% + 50px);
+    animation-delay: .4s;
+}
+
+#security .points .point:nth-child(4) {
+    left: calc(50% + 30px);
+    top: calc(50% + 50px);
+    animation-delay: .6s;
+}
+
+#security .points .point:nth-child(5) {
+    left: calc(50% + 150px);
+    top: calc(50% + 35px);
+    animation-delay: .8s;
+}
+
+#security .points .point:nth-child(6) {
+    left: calc(50% + 260px);
+    top: calc(50%);
+    animation-delay: 1s;
+}
+
+#security .backpoints .point:nth-child(1) {
+    left: calc(50% + 150px);
+    top: calc(50% - 35px);
+    animation-delay: 1.2s;
+}
+
+#security .backpoints .point:nth-child(2) {
+    left: calc(50% + 30px);
+    top: calc(50% - 50px);
+    animation-delay: 1.4s;
+}
+
+#security .backpoints .point:nth-child(3) {
+    left: calc(50% - 90px);
+    top: calc(50% - 50px);
+    animation-delay: 1.6s;
+}
+
+#security .backpoints .point:nth-child(4) {
+    left: calc(50% - 210px);
+    top: calc(50% - 35px);
+    animation-delay: 1.8s;
+}
+
+#security .point .rotator {
+    pointer-events: none;
+}
+
+#security .point .rotator>img {
+    animation-name: floatV;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+
+#security .focus .rotator>img {
+    animation-play-state: paused;
+}
+
+#security .points .point:nth-child(1) .rotator>img {
+    animation-delay: 2s;
+}
+
+#security .points .point:nth-child(2) .rotator>img {
+    animation-delay: 2.2s;
+}
+
+#security .points .point:nth-child(3) .rotator>img {
+    animation-delay: .4s;
+}
+
+#security .points .point:nth-child(4) .rotator>img {
+    animation-delay: .6s;
+}
+
+#security .points .point:nth-child(5) .rotator>img {
+    animation-delay: .8s;
+}
+
+#security .points .point:nth-child(6) .rotator>img {
+    animation-delay: 1s;
+}
+
+#security .backpoints .point:nth-child(1) .rotator>img {
+    animation-delay: 1.2s;
+}
+
+#security .backpoints .point:nth-child(2) .rotator>img {
+    animation-delay: 1.4s;
+}
+
+#security .backpoints .point:nth-child(3) .rotator>img {
+    animation-delay: 1.6s;
+}
+
+#security .backpoints .point:nth-child(4) .rotator>img {
+    animation-delay: 1.8s;
+}
+
+#security footer {
+    z-index: 100;
+}
+
+#download {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #101010 url(../img/background.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+#download .wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#download .wrapper .container {
+    position: relative;
+}
+
+#download .wrapper table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0px 50px 40px 50px;
+}
+
+#download .wrapper td, #download .wrapper th {
+    padding: 0px;
+    vertical-align: top;
+    text-align: left;
+}
+
+#download .bgstep {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 30px);
+    margin-top: 45px;
+    border-radius: 5px;
+    background: rgba(128, 128, 128, 0.1);
+    align-self: stretch;
+    border-bottom: 2px solid #e4c571;
+    z-index: -1;
+    animation-name: fadeInUp;
+}
+
+#download .wrapper .container .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: 'TCAdministerRR-Bold';
+    color: #e4c571;
+    font-size: 58px;
+    width: 56px;
+    z-index: 1;
+    animation-name: bounceIn;
+}
+
+#download .wrapper .container .step:before {
+    content: " ";
+    position: absolute;
+    width: 56px;
+    height: 51px;
+    margin-top: 23px;
+    background: url(../../l2sanctuary.pl/img/circle.svg);
+    background-size: 100%;
+    transform: rotate(.5turn);
+    opacity: .3;
+    z-index: -1;
+}
+
+#download .wrapper .container .name {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'TCAdministerRR-Bold';
+    color: #e4c571;
+    font-size: 14px;
+    width: 56px;
+    margin-top: 8px;
+    animation-name: fadeInUp;
+}
+
+#download .wrapper .container .name::after {
+    position: absolute;
+    content: attr(title);
+    font-family: 'TCAdministerRR-Bold';
+    color: #e4c571;
+    font-size: 22px;
+    left: 76px;
+    bottom: -2px;
+    width: 60vw;
+}
+
+#download .wrapper .container .image {
+    vertical-align: middle;
+    text-align: right;
+    min-width: 255px;
+    animation-name: fadeInUp;
+}
+
+#download .wrapper .container .desc {
+    font-size: 13px;
+    letter-spacing: .7px;
+    line-height: 25px;
+    animation-name: fadeInUp;
+}
+
+.starter {
+    width: 168px;
+    height: 44px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: 'TCAdministerRR-Bold';
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: url(../img/download.png) top no-repeat;
+}
+
+.starter:after {
+    content: "";
+    position: absolute;
+    width: 168px;
+    height: 44px;
+    background: url(../img/download.png) bottom no-repeat;
+    transition: all .2s linear;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.starter:hover:after {
+    opacity: 1;
+    visibility: visible; 
+}
+
+#sevenrules {
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #101010 url(../img/background.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+#sevenrules .wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#sevenrules .wrapper .container {
+    position: relative;
+}
+
+#sevenrules .wrapper table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0px 50px 40px 50px;
+}
+
+#sevenrules .wrapper td, #sevenrules .wrapper th {
+    padding: 0px;
+    vertical-align: top;
+    text-align: left;
+}
+
+#sevenrules .bgstep {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 30px);
+    margin-top: 45px;
+    border-radius: 5px;
+    background: rgba(128, 128, 128, 0.1);
+    align-self: stretch;
+    border-bottom: 2px solid #e4c571;
+    z-index: -1;
+    animation-name: fadeInUp;
+}
+
+#sevenrules .wrapper .container .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: 'TCAdministerRR-Bold';
+    color: #e4c571;
+    font-size: 58px;
+    width: 56px;
+    z-index: 1;
+    animation-name: bounceIn;
+}
+
+#sevenrules .wrapper .container .step:before {
+    content: " ";
+    position: absolute;
+    width: 56px;
+    height: 51px;
+    margin-top: 23px;
+    background: url(../../l2sanctuary.pl/img/circle.svg);
+    background-size: 100%;
+    transform: rotate(.5turn);
+    opacity: .3;
+    z-index: -1;
+}
+
+#sevenrules .wrapper .container .name {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'TCAdministerRR-Bold';
+    color: #e4c571;
+    font-size: 14px;
+    width: 56px;
+    margin-top: 8px;
+    animation-name: fadeInUp;
+}
+
+#sevenrules .wrapper .container .name::after {
+    position: absolute;
+    content: attr(title);
+    font-family: 'TCAdministerRR-Bold';
+    color: #e4c571;
+    font-size: 22px;
+    left: 76px;
+    bottom: -2px;
+    width: 60vw;
+}
+
+#sevenrules .wrapper .container .desc {
+    font-size: 13px;
+    letter-spacing: .7px;
+    line-height: 25px;
+    animation-name: fadeInUp;
+}
+
+#sevenrules .wrapper .container .desc a {
+    color: #0099BB;
+    transition: all .25s linear 0s;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    background: #101010;
+    z-index: 10;
+}
+
+#download footer, #security footer, #sevenrules footer {
+    background: none;
+}
+
+footer:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border-top: 1px solid #2d2d2d;
+}
+
+footer table {
+    width: 100%;
+    height: 60px;
+    max-width: 960px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-right: 41px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all .25s linear 0s;
+}
+
+footer ul li a.language {
+    margin-right: 0px;
+}
+
+footer ul li a.language img {
+    position: absolute;
+    left: -30px;
+}
+
+footer ul li a.language div {
+    position: relative;
+}
+
+footer ul li:not(:first-child) a.menu:before { 
+    content: "";
+    position: absolute;
+    left: -27px;
+    width: 8px;
+    height: 14px;
+    background: url(../img/header_separator.png) bottom no-repeat;
+}
+
+footer span {
+    color: #808080;
+}
+
+@media not all and (pointer:coarse) {
+    #language .wrapper ul li a:hover {
+        color: #e4c571;
+        transition: all .25s linear 0s;
+    }
+
+    header nav ul li a {
+        user-select: none;
+    }
+
+    header nav ul li a:hover {
+        cursor: pointer;
+        color: #e4c571;
+        transition: all .25s linear 0s;
+    }
+
+    #content .slider .slider-nav {
+        user-select: none;
+    }
+
+    #content .slider .slider-nav:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    #content .slider .slider-pages li {
+        user-select: none;
+    }
+    
+    #content .slider .slider-pages li span:hover {
+        cursor: pointer;
+        opacity: 1;
+        transition: all .2s linear 0s;
+    }
+
+    #rules .slider .slider-nav {
+        user-select: none;
+    }
+
+    #rules .slider .slider-nav:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    #rules .slider .slider-pages li {
+        user-select: none;
+    }
+    
+    #rules .slider .slider-pages li span:hover {
+        cursor: pointer;
+        opacity: 1;
+        transition: all .2s linear 0s;
+    }
+
+    #olympiad .wrapper .days>div {
+        user-select: none;
+    }
+
+    #olympiad .wrapper .days>div:hover {
+        padding-top: 170px;
+        max-height: 100%;
+    }
+
+    #olympiad .wrapper .days>div:hover .content span {
+        display: none;
+        visibility: hidden;
+        transition: all .3s ease 0s;
+    }
+
+    #olympiad .wrapper .days>div:hover .content p {
+        display: inline;
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+        transition: all .3s ease 0s;
+    }
+
+    #features .sidebar .menu a:hover {
+        cursor: pointer;
+        color: #e4c571;
+        transition: all .25s linear 0s;
+    }
+
+    #sevenrules .wrapper .container .desc a:hover {
+        cursor: pointer;
+        color: #e4c571;
+        transition: all .25s linear 0s;
+    }
+
+    footer ul li a:hover {
+        cursor: pointer;
+        color: #e4c571;
+        transition: all .25s linear 0s;
+    }
+}
+
+@media(min-width: 769px) {
+    .animated {
+        animation-duration: .75s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+
+    @keyframes fadeIn35 {
+        from {opacity: 0}
+        to {opacity: 0.35}
+    }
+
+    @keyframes fadeInUp {
+        from {
+            transition: .3s ease-out;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: none;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(0,-20px,0);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translate3d(-10%,0,0);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translate3d(10%,0,0);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes fadeInLeft35 {
+        from {
+            opacity: 0;
+            transform: translate3d(-10%,0,0);
+        }
+        to {
+            opacity: 0.35;
+            transform: none;
+        }
+    }
+
+    @keyframes fadeInRight35 {
+        from {
+            opacity: 0;
+            transform: translate3d(10%,0,0);
+        }
+        to {
+            opacity: 0.35;
+            transform: none;
+        }
+    }
+
+    @keyframes bounceIn {
+        from,20%,40%,60%,80%,to {
+            animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        }
+        0% {
+            opacity: 0;
+            transform: scale3d(.3,.3,.3);
+        }
+        20% {
+            transform: scale3d(1.1,1.1,1.1);
+        }
+        40% {
+            transform: scale3d(.9,.9,.9);
+        }
+        60% {
+            opacity: 1;
+            transform: scale3d(1.03,1.03,1.03);
+        }
+        80% {
+            transform: scale3d(.97,.97,.97);
+        }
+        to {
+            opacity: 1;
+            transform: scale3d(1,1,1);
+        }
+    }
+
+    @keyframes resizeY15Down {
+        from {
+            transform: scale(1, 0) rotate(0deg);
+        }
+        to {
+            transform: scale(1, 1) rotate(15deg);
+        }
+    }
+
+    @keyframes resizeY15Up {
+        from {
+            transform: scale(1, 1) rotate(15deg);
+        }
+        to {
+            transform: scale(1, 0) rotate(0deg);
+        }
+    }
+
+    @keyframes fadeOutLeft {
+        from {
+            opacity: 1;
+            transform: none;
+            
+        }
+        to {
+            opacity: 0;
+            transform: translate3d(-10%,0,0);
+        }
+    }
+
+    @keyframes resizeIn45 {
+        from {
+            opacity: 0;
+            transform: scale(0.5, 0.5) rotate(-45deg);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1, 1) rotate(0deg);
+        }
+    }
+
+    @keyframes resizeOut45 {
+        from {
+            opacity: 1;
+            transform: scale(1, 1) rotate(0deg);
+        }
+        to {
+            opacity: 0;
+            transform: scale(0.5, 0.5) rotate(-45deg);
+        }
+    }
+
+    @keyframes resizeInLeft {
+        from {
+            opacity: 0;
+            transform: translate(-25%, 0px) scale(0.5, 1);
+        }
+        to {
+            opacity: 1;
+            transform: translate(0px, 0px) scale(1, 1);
+        }
+    }
+
+    @keyframes resizeOutLeft {
+        from {
+            opacity: 1;
+            transform: translate(0px, 0px) scale(1, 1);
+        }
+        to {
+            opacity: 0;
+            transform: translate(-25%, 0px) scale(0.5, 1);
+        }
+    }
+
+    @keyframes resizeInRight {
+        from {
+            opacity: 0;
+            transform: translate(+25%, 0px) scale(0.5, 1);
+        }
+        to {
+            opacity: 1;
+            transform: translate(0px, 0px) scale(1, 1);
+        }
+    }
+
+    @keyframes resizeOutRight {
+        from {
+            opacity: 1;
+            transform: translate(0px, 0px) scale(1, 1);
+        }
+        to {
+            opacity: 0;
+            transform: translate(+25%, 0px) scale(0.5, 1);
+        }
+    }
+
+    @keyframes floatV {
+        from {
+            transform: translate(0px, -15px);
+        }
+        50% {
+            transform: translate(0px, 15px);
+        }
+        to {
+            transform: translate(0px, -15px);
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    html, body {
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .hide-smartphone {
+        display: none!important;
+    }
+
+    .show-smartphone {
+        display: inherit;
+    }
+
+    .hidden {
+        visibility: inherit;
+    }
+
+    #home {
+        height: auto;
+    }
+
+    #home .wrapper {
+        padding: 100px 20px 30px;
+        min-height: 80vh;
+    }
+
+    #home .wrapper .text h1 {
+        font-size: 23px;
+        line-height: 1.2em;
+        margin: 15px 0;
+    }
+
+    #home .wrapper .text p {
+        font-size: 14px;
+    }
+
+    #home .wrapper .featureline {
+        width: 340px;
+    }
+
+    .featureicon:before, .featureicon:after {
+        display: none;
+    }
+
+    .featureicon:nth-child(4), .featureicon:nth-child(5) {
+        display: none;
+    }
+
+    #home .video {
+        background: url(../img/home_bg.jpg) top center no-repeat;
+        background-size: cover;
+    }
+
+    #home .video video {
+        display: none;
+    }
+
+    .anchor {
+        min-height: 60px;
+    }
+
+    .section-header h1 {
+        font-size: 18px;
+        margin: 10px 0 5px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .section-header p {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+
+    #personalization {
+        min-height: calc(max(2150px, 100%));
+    }
+    
+    #personalization .none .label, #personalization .disabled .label {
+        display: none;
+    }
+   
+    #personalization .char .point {
+        display: none;
+    }
+
+    #personalization .warlord .label {
+        top: 25px;
+        left: -70px;
+    }
+
+    #personalization .plainswalker .label {
+        left: -170px;
+    }
+
+    #personalization .spellhowler {
+        top: 834px;
+        left: calc(50% - 50px);
+    }
+
+    #personalization .sorcerer {
+        top: 834px;
+        left: calc(50% - 360px);
+    }
+
+    #personalization .sorcerer .label {
+        left: 75px;
+    }
+    
+    #personalization .shillienknight {
+        top: 1434px;
+        left: calc(50% - 256px);
+    }
+
+    #personalization .shillienknight .label {
+        left: -70px;
+    }
+
+    #personalization .warsmith {
+        top: 1434px;
+        left: calc(50% - 14px);
+    }
+
+    #personalization .warsmith .label {
+        left: -220px;
+    }
+
+    #content .slider .slider-nav.prev {
+        left: 10px;
+    }
+    #content .slider .slider-nav.next {
+        right: 10px;
+    }
+
+    #content .slider .slider-pages {
+        bottom: 10px;
+    }
+
+    #content .slider .slider-pages li:after {
+        left: 65px;
+        width: 10px;
+    }
+
+    #content .slider .slider-pages li {
+        width: 60px;
+    }
+
+    #content .slider .slider-wrapper>div .slider-text {
+        padding: 0px 50px 50px 50px;
+    }
+
+    #content .slider .slider-wrapper>div .slider-text>* {
+        padding: 0px 10% 0px 0px;
+    }
+
+    #content .slider .slider-wrapper>div .slider-text h1 {
+        font-size: 18px;
+    }
+    
+    #content .slider .slider-wrapper>div .slider-text p {
+        font-size: 12px;
+    }
+
+    #content .slider .slider-wrapper>div:nth-child(1) .slider-image {
+        right: calc(min(0px, 70% - 918px));
+        opacity: .5;
+    }
+    
+    #content .slider .slider-wrapper>div:nth-child(2) .slider-image {
+        right: calc(min(0px, 100% - 733px));
+        opacity: .5;
+    }
+    
+    #content .slider .slider-wrapper>div:nth-child(3) .slider-image {
+        right: calc(min(0px, 65% - 775px));
+        opacity: .5;
+    }
+    
+    #content .slider .slider-wrapper>div:nth-child(4) .slider-image {
+        right: calc(min(0px, 90% - 772px));
+        opacity: .5;
+    }
+    
+    #content .slider .slider-wrapper>div:nth-child(5) .slider-image {
+        right: calc(min(0px, 130% - 1009px));
+        opacity: .5;
+    }
+    
+    #content .slider .slider-wrapper>div:nth-child(6) .slider-image {
+        transform: scaleX(-1);
+        right: calc(min(0px, 125% - 965px));
+        opacity: .5;
+    }
+
+    #rules .slider {
+        max-width: calc(min(1192px, 100% - 100px));
+    }
+    
+    #rules .slider .slider-nav.prev {
+        left: -40px;
+    }
+    
+    #rules .slider .slider-nav.next {
+        right: -40px;
+    }
+
+    #rules .slider .slider-wrapper>div .slider-text .separator {
+        display: none;
+    }
+
+    #rules .slider .slider-wrapper>div .slider-image {
+        opacity: .5;
+    }
+
+    #olympiad .wrapper {
+        padding: 0 10px;
+    }
+
+    #olympiad .wrapper .days {
+        flex-wrap: wrap;
+        padding: 10px 0;
+        margin-top: 50px;
+        height: auto;
+        justify-content: space-around;
+    }
+
+    #olympiad .wrapper .days>div {
+        width: calc(33.3% - 10px);
+        min-height: 210px;
+        padding: 10px;
+        padding-top: 50px;
+        margin: 5px 0;
+        position: relative;
+        background-size: 100%;
+    }
+
+    #olympiad .wrapper .days>div:nth-child(4), #olympiad .wrapper .days>div:nth-child(5) {
+        width: calc(50% - 10px);
+    }
+
+    #olympiad .wrapper .days>div:hover {
+        padding-top: inherit;
+    }
+
+    #olympiad .wrapper .days>div .content {
+        width: 100%;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    #olympiad .wrapper .days>div .content span {
+        display: none;
+    }
+
+    #olympiad .wrapper .days>div .content strong {
+        font-size: 13px;
+        line-height: 1.3em;
+        margin: 10px 0 0;
+    }
+
+    #olympiad .wrapper .days>div .content p {
+        display: none;
+    }
+
+    #security .back {
+        background-size: calc(min(400%, 2560px)) calc(min(100%, 1080px));
+    }
+
+    #security .char {
+        background-size: cover;
+    }
+
+    #security .desc, #security .enemy {
+        display: none;
+    }
+
+    #download .wrapper .container .image {
+        min-width: 0px;
+        margin: auto;
+    }
+
+    .starter {
+        margin: auto;
+    }
+
+    footer table {
+        font-size: 8px;
+    }
+
+    footer ul li a {
+        margin-right: 17px;
+    }
+
+    footer ul li:not(:first-child) a.menu:before { 
+        left: -14px;
+    }
+}
+
+@media(max-height: 600px) {
+    header {
+        display: none;
+    }
+
+    #home .wrapper .featureline {
+        display: none;
+    }
+
+    #home .wrapper .play {
+        animation-delay: 1s;
+    }
+    
+    #personalization .warlord {
+        left: calc(50% - 227px);
+    }
+
+    #personalization .plainswalker {
+        left: calc(50% - 15px);
+    }
+
+    #personalization .plainswalker .point:nth-child(4) .desc {
+        left: -359px;
+        background: url(../img/customization/bg2.png) no-repeat;
+        animation-name: resizeOutRight;
+    }
+
+    #personalization .plainswalker .focus:nth-child(4) .desc {
+        animation-name: resizeInRight;
+    }
+
+    #personalization .plainswalker .point:nth-child(5) .desc {
+        top: -87px;
+        left: -359px;
+        animation-name: resizeOutRight;
+    }
+
+    #personalization .plainswalker .focus:nth-child(5) .desc {
+        animation-name: resizeInRight;
+    }
+
+    #personalization .plainswalker .point:nth-child(4) .desc:before {
+        shape-outside: polygon(0 0, 100% 0, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    #personalization .spellhowler {
+        left: calc(50% - 370px);
+    }
+
+    #personalization .sorcerer, #personalization .warsmith, #personalization .shillienknight {
+        display: none;
+    }
+
+    #content .slider .slider-nav.prev {
+        left: 30px;
+    }
+    #content .slider .slider-nav.next {
+        right: 30px;
+    }
+
+    #content .slider .slider-pages {
+        bottom: 10px;
+    }
+
+    #content .slider .slider-wrapper>div .slider-text {
+        padding: 0px 110px 50px 110px;
+    }
+
+    #olympiad .wrapper {
+        padding: 0 10px;
+    }
+
+    #olympiad .wrapper .days {
+        margin-top: 0px;
+        padding: 10px 0;
+    }
+
+    #olympiad .wrapper .days>div:hover {
+        padding-top: inherit;
+    }
+
+    #olympiad .wrapper .days>div .content {
+        width: 100%;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    #olympiad .wrapper .days>div .content span {
+        display: none;
+    }
+
+    #olympiad .wrapper .days>div .content strong {
+        margin: 10px 0 0;
+    }
+
+    #olympiad .wrapper .days>div .content p {
+        display: none;
+    }
+
+    #security .back {
+        background-size: calc(min(170%, 2560px)) calc(min(100%, 1080px));
+    }
+
+    #features .sidebar {
+        padding: 20px 20px 20px 20px;
+    }
+    
+    #features .wrapper {
+        padding: 20px 15px 20px 235px;
+    }
+
+    #features .wrapper .topic:before, #features .wrapper .subtopic:before { 
+        margin-top: -10px; 
+        height: 10px;
+    }
+
+    .anchor {
+        display: none;
+    }
+	
+	footer ul li a {
+        margin-right: 17px;
+    }
+
+    footer ul li:not(:first-child) a.menu:before { 
+        left: -14px;
+    }
+}
